@@ -24,13 +24,15 @@ function getRandomHexColor() {
 };
 
 function createBoxes(amount) {
+  const arrBoxEl = [];
   for (let i = 0; i < amount; i++) {
     const divBoxEl = document.createElement('div');
     divBoxEl.style.width = `${sizeMin + (i * 10)}px`;
     divBoxEl.style.height = `${sizeMin + (i * 10)}px`;
     divBoxEl.style.backgroundColor = getRandomHexColor();
-    elements.boxes.append(divBoxEl);
+    arrBoxEl.push(divBoxEl);
   }
+  elements.boxes.append(...arrBoxEl);
 };
 
 function destroyBoxes() {

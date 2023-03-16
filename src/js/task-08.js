@@ -9,7 +9,7 @@ function onSubmit(event) {
     elements: { email, password,}
   } = event.currentTarget;
 
-  if (email.value === '' || password.value === '') {
+  if (!email.value || !password.value) {
     alert('Please fill in all the fields!');
     return;
   }
